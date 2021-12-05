@@ -10,7 +10,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
   </head>
-  <body>
+  <body style="background-color: burlywood; color:black">
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
@@ -35,7 +35,7 @@
         <div class="col-md-8">
           <h2>Featured Mars Image</h2>
           <img
-            src="{{mars.featured_image }}"
+            src="{{mars.featured_image}}"
             class="img-responsive"
             alt="Responsive image"
           />
@@ -46,6 +46,19 @@
             <h4>Mars Facts</h4>
             {{ mars.facts | safe }}
           </div>
+        </div>
+      </div>
+      <!-- Section for Mars Hemisphere Images -->
+      <div class="row" id="mars-hemisphere">
+        <div class="col-md-12">
+          <h2><center>Mars Hemispheres</center></h2>
+          {% for hemisphere in mars.hemispheres %}
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <img src="{{hemisphere.img_url}}"
+                  <h2><b>{{hemisphere.title}}</b></h2>
+              </div>
+            </div>
         </div>
       </div>
     </div>
